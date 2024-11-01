@@ -1,0 +1,98 @@
+indent-width = 4
+target-version = "py38"
+line-length = 88
+
+[format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = true
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
+[lint]
+select = [
+    "A",
+    "ARG",
+    "B",
+    "C",
+    "DTZ",
+    "E",
+    "EM",
+    "F",
+    "FBT",
+    "I",
+    "ICN",
+    "ISC",
+    "N",
+    "PLC",
+    "PLE",
+    "PLR",
+    "PLW",
+    "Q",
+    "RUF",
+    "S",
+    "T",
+    "TID",
+    "UP",
+    "W",
+    "YTT",
+]
+ignore = [
+    # Allow non-abstract empty methods in abstract base classes
+    "B027",
+    # Allow string literal in errors
+    "EM101",
+    # Ignore checks for possible passwords
+    "S105", "S106", "S107", "S311",
+    # Ignore complexity
+    "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
+    # Allow booleans in function def
+    "FBT001",
+    "FBT002",
+    # Allow print
+    "T201",
+    # Allow relative imports - this structure is needed for the Anki Add-on to work
+    "TID252",
+    # Allow function call in dataclass defaults: this is ok when we're using immutable
+    # objects for this
+    "RUF009",
+    # Can cause conflicts in Python 3.12
+    "ISC001",
+    # Allow upper case in function and argument names
+    "N802", "N803",
+    # Allow global statement to update variable
+    "PLW0603"
+]
+unfixable = [
+    # Don't touch unused imports
+    "F401",
+]
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[lint.per-file-ignores]
+# Tests can use magic values, assertions, and relative imports
+"tests/**/*" = ["PLR2004", "S101", "TID252"]
+# For __init__ files, don't complain about unused imports or star imports
+"**/__init__.py" = ["F401", "F403"]

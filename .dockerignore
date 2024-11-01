@@ -1,0 +1,33 @@
+README.md
+docker-compose.yml
+
+# Ignore version control files
+.git
+.gitignore
+src/score.py
+src/cutoff_classic_plain.py
+
+# Ignore Python package management files
+pyproject.toml
+poetry.lock
+
+# Ignore configuration files
+ruff.toml
+mypy.ini
+pytest.ini
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+*.swp
+
+# Ignore other unnecessary files
+*.log
+*.pyc
+__pycache__/
+*.pdb
+*.egg-info/
+*.env
+*.DS_Store
+
+# Ignore any other files you don't want to include in the image

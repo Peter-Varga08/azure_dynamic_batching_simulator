@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "azure_dynamic_batching_simulator"
+version = "0.1.0"
+description = "ColBERT endpoint simulator for testing dynamic batching during inference time."
+authors = ["petervarga <varga.peter826@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.4"
+RAGatouille = "^0.0.8.post4"
+transformers = "^4.46.1"
+pydantic = "^2.9.2"
+torch = "^2.5.1"
+uvicorn = "^0.32.0"
+
+# packages not required by the dockerized application
+[tool.poetry.group.dev.dependencies]
+locust = "^2.32.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
