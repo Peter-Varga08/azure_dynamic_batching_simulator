@@ -1,4 +1,3 @@
-# Global variables
 import asyncio
 import threading
 import time
@@ -61,11 +60,9 @@ def batch_processing_loop():
 
 
 def run(data):
-    # Receive new requests
+    # Receive new requests and wait for the batch processing loop to fulfill the request
     future = asyncio.Future()
     request_queue.put({"text": data["text"], "future": future})
-
-    # Wait for the batch processing loop to fulfill the request
     return future
 
 
