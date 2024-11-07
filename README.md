@@ -1,6 +1,6 @@
 # Azure Dynamic Batching Simulator
 
-BERT model endpoint simulator for testing dynamic batching during inference time.
+BERT model endpoint simulator for testing dynamic batching during inference time with Azure ML Studio endpoint-like syntactics.
 
 ## Requirements
 
@@ -13,8 +13,8 @@ BERT model endpoint simulator for testing dynamic batching during inference time
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/your-repo/endpoint-simulator.git
-    cd endpoint-simulator
+    git clone git@github.com:Peter-Varga08/azure_dynamic_batching_simulator.git
+    cd azure_dynamic_batching_simulator
     ```
 
 2. Option 1: Install the dependencies in local virtual environment
@@ -60,7 +60,7 @@ The application can be load-tested against various batching configurations using
    Option 2: in docker container (recommended)
 
     ```sh
-    # nothing to do, running the application spins up the locust service automatically
+    # nothing to do, running the application with `make up` spins up the locust service automatically
     ```
 2. The locust web interface will be available at `http://0.0.0.0:8089`
 3. Enter the URL of the FastAPI application (`http://0.0.0.0:8000`) and the number of users to simulate.
